@@ -1,10 +1,9 @@
 
 function Priority() {
 
-    return (
-      <div className="Priority">Priority</div>
-    );
-  }
-  
-  export default Priority;
-  
+  return (
+    <div className="priority">Priority</div>
+  );
+}
+
+export default Priority;

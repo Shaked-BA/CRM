@@ -1,0 +1,9 @@
+.dashboard {
+    padding: 30px;
+    width: 100%;
+}
+  
+.dashboard .ticket-container {
+    height:80vh;
+    overflow: scroll;
+}

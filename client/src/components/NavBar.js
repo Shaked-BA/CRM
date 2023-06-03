@@ -1,10 +1,23 @@
+import { useNavigate } from "react-router-dom";
+
+import '../styles/NavBar.css';
+import logo from '../styles/images/crm-logo.png';
 
 function NavBar() {
+  const navigate = useNavigate();
 
-    return (
-      <div className="NavBar">NavBar</div>
-    );
-  }
-  
-  export default NavBar;
+  return (
+    <nav>
+      <div className="logo-container">
+        <img src={logo} alt="logo" />
+        <div className="controls-container">
+          <div className="icon" onClick={() => navigate('/ticket')}>➕</div>
+          <div className="icon" onClick={() => navigate('/')}>❮❮</div>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default NavBar;
   

@@ -1,10 +1,10 @@
 
 function Status() {
 
-    return (
-      <div className="Status">Status</div>
-    );
-  }
-  
-  export default Status;
+  return (
+    <div className="status">Status</div>
+  );
+}
+
+export default Status;
   
