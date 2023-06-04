@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import '../styles/NavBar.css';
+import '../styles/components/NavBar.css';
 
 import logo from '../styles/images/crm-logo.png';
 

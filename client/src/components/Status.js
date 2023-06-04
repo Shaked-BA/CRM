@@ -1,4 +1,4 @@
-import '../styles/Status.css'
+import '../styles/components/Status.css'
 
 function Status({ status }) {
 

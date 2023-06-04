@@ -1,12 +1,16 @@
-import '../styles/Priority.css';
+import '../styles/components/Priority.css';
 
 function Priority({ priority }) {
-  const starts = Array(Math.min
+  const stars = Array(Math.min
     (
       priority, 5
     )).fill
     (
-      <h3 id="star">★</h3>
+      0
+    ).map
+    (
+      (gold, i) =>
+        <h3 key={i} id="star">★</h3>
     ).concat
     (
       Array(Math.max
@@ -14,13 +18,17 @@ function Priority({ priority }) {
           5 - priority, 0
         )).fill
         (
-          <h3>★</h3>
+          0
+        ).map
+        (
+          (black, j) =>
+            <h3 key={j + 5}>★</h3>
         )
-    );
+    )
 
   return (
     <div className="priority">
-      {starts}
+      {stars}
     </div>
   );
 }

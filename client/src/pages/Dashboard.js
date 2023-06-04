@@ -1,4 +1,4 @@
-import '../styles/Dashboard.css';
+import '../styles/pages/Dashboard.css';
 
 import TicketCard from '../components/TicketCard';
 import data from '../dummy-data';
@@ -25,7 +25,7 @@ function Dashboard() {
                 {tickets.map
                   (
                     (ticket, j) =>
-                      <TicketCard key={j} ticket={ticket} />
+                      <TicketCard key={j} ticket={ticket} categoryId={i} />
                   )
                 }
               </div>

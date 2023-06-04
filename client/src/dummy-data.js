@@ -1,7 +1,6 @@
 const data = [
     {
         category: 'Q2 2023',
-        color: 'red',
         title: 'NFT Safety 101 Video',
         owner: 'Shaked',
         avatar: '',
@@ -13,7 +12,6 @@ const data = [
     },
     {
         category: 'Q2 2023',
-        color: 'red',
         title: 'Build and Sell an AI Model',
         owner: 'Bar',
         avatar: '',
@@ -25,7 +23,6 @@ const data = [
     },
     {
         category: 'Q3 2023',
-        color: 'red',
         title: 'My top tools for 2022',
         owner: 'Luna',
         avatar: '',
@@ -37,11 +34,10 @@ const data = [
     },
     {
         category: 'Q4 2023',
-        color: 'blue',
         title: 'Frogger in React',
         owner: 'Shaked',
         avatar: '',
-        status: 'other',
+        status: 'not-started',
         priority: 2,
         progress: 0,
         description: 'Build the popular retro game Frogger in React.',

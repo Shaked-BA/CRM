@@ -1,4 +1,4 @@
-import "../styles/Avatar.css"
+import "../styles/components/Avatar.css"
 
 import blankAvatar from "../styles/images/blank-profile.png"
 

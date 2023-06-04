@@ -1,0 +1,19 @@
+.delete {
+    background-color: rgb(221, 221, 221);
+    width: 50px;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete .delete-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: rgb(255, 109, 109);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

@@ -1,6 +1,7 @@
 .status {
     display: flex;
     justify-content: center;
+    background-color: rgb(186, 225, 255);
 }
 
 #done {
@@ -15,6 +16,6 @@
     background-color: rgb(255, 179, 186);
 }
 
-#other {
+#not-started {
     background-color: rgb(186, 225, 255);
 }
