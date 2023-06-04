@@ -19,16 +19,16 @@ function Dashboard() {
       <div className="ticket-container">
         {[...ticketsByCategories].map
           (
-            ([category, tickets], i) => 
-            <div key={i}>
-            <h3>{category}</h3>
-            {tickets.map
-              (
-                (ticket, j) => 
-                <TicketCard key={j} ticket={ticket} />
-              )
-            }
-            </div>
+            ([category, [tickets]], i) =>
+              <div key={i}>
+                <h3>{category}</h3>
+                {tickets.map
+                  (
+                    (ticket, j) =>
+                      <TicketCard key={j} ticket={ticket} />
+                  )
+                }
+              </div>
           )
         }
       </div>

@@ -7,16 +7,16 @@ import Priority from './Priority';
 import ProgressBar from './ProgressBar';
 import DeleteButton from './DeleteButton';
 
-function TicketCard({ color, title, documentId, avatar, owner }) {
+function TicketCard({ ticket }) {
 
   return (
     <div className="ticket-card">
       <div className="ticket-color" />
-      <Link to={`/ticket/${documentId}`} id="link">
-        <h3>{title}</h3>
-        <Avatar avatar={avatar} owner={owner}/>
-        <Status />
-        <Priority />
+      <Link to={`/ticket/${ticket.documentId}`} id="link">
+        <h3>{ticket.title}</h3>
+        <Avatar avatar={ticket.avatar} owner={ticket.owner} />
+        <Status status={ticket.status} />
+        <Priority priority={ticket.priority} />
         <ProgressBar />
       </Link>
       <DeleteButton />
@@ -25,4 +25,3 @@ function TicketCard({ color, title, documentId, avatar, owner }) {
 }
 
 export default TicketCard;
-  

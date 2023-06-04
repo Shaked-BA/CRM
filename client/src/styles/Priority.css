@@ -1,0 +1,19 @@
+.priority {
+    display: flex;
+    justify-content: center;
+}
+
+
+.priority .star-container {
+    display: flex;
+}
+
+.priority .star-container h3 {
+    margin: 7px;
+    padding: 0;
+    color: rgb(167, 167, 167);
+}
+
+#star {
+    color: rgb(248, 211, 0);
+}

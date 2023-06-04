@@ -1,10 +1,12 @@
+import '../styles/Status.css'
 
-function Status() {
+function Status({ status }) {
 
   return (
-    <div className="status">Status</div>
+    <div className="status" id={status}>
+      {status}
+    </div>
   );
 }
 
 export default Status;
-  

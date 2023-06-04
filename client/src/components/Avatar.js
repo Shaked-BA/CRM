@@ -15,4 +15,3 @@ function Avatar({ avatar, owner }) {
 }
 
 export default Avatar;
-  
