@@ -1,0 +1,63 @@
+.ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ticket .ticket-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ticket form {
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket form section {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 500px;
+    row-gap: 8px;
+}
+
+.ticket form label {
+    margin: 0px 0 0 0;
+}
+
+.ticket form input,
+select {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1.5px solid rgb(218, 218, 218);
+    margin: 5px;
+}
+
+.inputs-container {
+    display: flex;
+    column-gap: 20px;
+    padding: 5px;
+}
+
+.priority-input {
+    flex-direction: row;
+}
+
+.ticket .image-preview {
+    display: flex;
+    margin-left: 150px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ticket .image-preview img {
+    width: 100%;
+}

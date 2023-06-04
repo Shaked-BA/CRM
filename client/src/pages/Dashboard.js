@@ -5,13 +5,15 @@ import data from '../dummy-data';
 
 function Dashboard() {
 
-  const ticketsByCategories = new Map([...data?.map
-    (({ category }) => [category, [data.filter
-      (
-        (ticket) => ticket.category === category
-      )]]
-    )]
-  );
+  const ticketsByCategories = new Map
+    (
+      [...data?.map
+        (({ category }) => [category, [data.filter
+          (
+            (ticket) => ticket.category === category
+          )]]
+        )]
+    );
 
   return (
     <div className="dashboard">
