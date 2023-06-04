@@ -1,8 +1,16 @@
+import "../styles/Avatar.css"
 
-function Avatar() {
+import blankAvatar from "../styles/images/blank-profile.png"
+
+
+function Avatar({ avatar, owner }) {
 
   return (
-    <div className="avatar">Avatar</div>
+    <div className="avatar-container">
+      <div className="image-container">
+        <img src={avatar ? avatar : blankAvatar} alt={`${owner}'s avatar`} />
+      </div>
+    </div>
   );
 }
 

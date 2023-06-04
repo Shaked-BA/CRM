@@ -1,0 +1,16 @@
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    width: 80px;
+}
+  
+.image-container {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+  
+.image-container img {
+    width: 100%;
+}
