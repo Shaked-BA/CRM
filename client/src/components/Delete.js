@@ -1,12 +1,18 @@
+import { deleteTicket } from '../services/tickets';
+
 import '../styles/components/Delete.css';
 
-function Delete() {
+function Delete({ ticketId }) {
 
-  const deleteTicket = () => {}
+  const handleDelete = () => {
+    if (deleteTicket(ticketId) !== null) {
+      window.location.reload();
+    }
+  }
 
   return (
     <div className="delete">
-      <div className="delete-icon" onClick={deleteTicket}>✖</div>
+      <div className="delete-icon" onClick={handleDelete}>✖</div>
     </div>
   );
 }

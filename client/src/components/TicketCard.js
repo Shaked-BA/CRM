@@ -21,14 +21,14 @@ function TicketCard({ ticket, categoryId }) {
   return (
     <div className="ticket-card">
       <div className="ticket-color" style={{ backgroundColor: colors[categoryId % 5] }} />
-      <Link to={`/ticket/${ticket.documentId}`} id="link">
+      <Link to={`/tickets/${ticket.id}`} state={ticket} id="link">
         <h3>{ticket.title}</h3>
         <Avatar avatar={ticket.avatar} owner={ticket.owner} />
         <Status status={ticket.status} />
         <Priority priority={ticket.priority} />
         <ProgressBar progress={ticket.progress} />
       </Link>
-      <Delete />
+      <Delete ticketId={ticket.id} />
     </div>
   );
 }

@@ -1,30 +1,31 @@
+import { useEffect, useContext } from 'react';
+
 import '../styles/pages/Dashboard.css';
 
+import { getTickets } from '../services/tickets';
 import TicketCard from '../components/TicketCard';
-import data from '../dummy-data';
+import { TicketsContext } from '../context';
 
 function Dashboard() {
+  const {categories, ticketsData, setTicketsData} = useContext(TicketsContext);
 
-  const ticketsByCategories = new Map
-    (
-      [...data?.map
-        (({ category }) => [category, [data.filter
-          (
-            (ticket) => ticket.category === category
-          )]]
-        )]
-    );
+  useEffect(() => {
+    getTickets(setTicketsData);
+  }, []);
 
   return (
     <div className="dashboard">
       <h1>My Project</h1>
       <div className="ticket-container">
-        {[...ticketsByCategories].map
+        {categories.map
           (
-            ([category, [tickets]], i) =>
+            (category, i) =>
               <div key={i}>
                 <h3>{category}</h3>
-                {tickets.map
+                {ticketsData.filter
+                  (
+                    (ticket) => ticket.category === category
+                  ).map
                   (
                     (ticket, j) =>
                       <TicketCard key={j} ticket={ticket} categoryId={i} />

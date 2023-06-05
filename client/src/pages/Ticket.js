@@ -1,26 +1,47 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import { editTicket, createTicket } from '../services/tickets';
+import { TicketsContext } from '../context';
+
 import '../styles/pages/Ticket.css'
 
 function Ticket({ editMode }) {
-  const categories = ["test1", "test2", "test3"];
+  const {categories} = useContext(TicketsContext);
+  const navigate = useNavigate();
+  const { state } = useLocation();
 
-  const [ticketData, setTicketData] = useState
+  const [newTicketData, setNewTicketData] = useState
     (
       {
-        priority: 1,
-        progress: 0,
-        status: 'not-started',
+        title: editMode ? state.title : '',
+        category: editMode ? state.category : '',
+        description: editMode ? state.description : '',
+        priority: editMode ? state.priority : '1',
+        progress: editMode ? state.progress : '0',
+        status: editMode ? state.status : 'not-started',
+        owner: editMode ? state.owner : '',
+        avatar: editMode ? state.avatar : '',
         timestamp: new Date().toISOString()
       }
     );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(ticketData);
+    if (editMode) {
+      if (editTicket(state.id, newTicketData) !== null) {
+        navigate('/');
+      }
+    }
+    else {
+      if (createTicket(newTicketData) !== null) {
+        navigate('/');
+      }
+    }
   }
 
   const handleChange = ({ target }) => {
-    setTicketData
+    setNewTicketData
       (
         (prevTicketData) => {
           return { ...prevTicketData, [target.name]: target.value }
@@ -37,7 +58,7 @@ function Ticket({ editMode }) {
             <label>Title</label>
             <input
               name="title"
-              value={ticketData.title}
+              value={newTicketData.title}
               type="text"
               required={true}
               onChange={handleChange}
@@ -45,7 +66,7 @@ function Ticket({ editMode }) {
             <label>Category</label>
             <input
               name="category"
-              value={ticketData.category}
+              value={newTicketData.category}
               type="text"
               list="categories"
               required={true}
@@ -64,7 +85,7 @@ function Ticket({ editMode }) {
             <label>Description</label>
             <input
               name="description"
-              value={ticketData.description}
+              value={newTicketData.description}
               type="text"
               onChange={handleChange}
             />
@@ -77,8 +98,9 @@ function Ticket({ editMode }) {
                       <label>{i + 1}</label>
                       <input
                         name="priority"
-                        value={ticketData.priority}
+                        value={i + 1}
                         type="radio"
+                        checked={newTicketData.priority ===`${i + 1}`}
                         onChange={handleChange}
                       />
                     </div>
@@ -87,7 +109,7 @@ function Ticket({ editMode }) {
             <label>Progress</label>
             <input
               name="progress"
-              value={ticketData.progress}
+              value={newTicketData.progress}
               type="range"
               min="0"
               max="100"
@@ -96,34 +118,34 @@ function Ticket({ editMode }) {
             <label>Status</label>
             <select
               name="status"
-              value={ticketData.status}
+              value={newTicketData.status}
               onChange={handleChange}
             >
-              <option>Done</option>
-              <option>In-progress</option>
-              <option>Stuck</option>
-              <option>Not Started</option>
+              <option>done</option>
+              <option>in-progress</option>
+              <option>stuck</option>
+              <option>not-started</option>
             </select>
           </section>
           <section>
             <label>Owner</label>
             <input
               name="owner"
-              value={ticketData.owner}
+              value={newTicketData.owner}
               type="owner"
               required={true}
               onChange={handleChange}
             />
 
-            <label htmlFor="avatar">Avatar</label>
+            <label>Avatar</label>
             <input
               name="avatar"
               type="url"
               onChange={handleChange}
             />
             <div className="image-preview">
-              {ticketData.avatar && (
-                <img src={ticketData.avatar} alt="preview" />
+              {newTicketData.avatar && (
+                <img src={newTicketData.avatar} alt="preview" />
               )}
             </div>
             <input type="submit" />

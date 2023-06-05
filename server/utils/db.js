@@ -1,48 +1,52 @@
-const data = [
+const tickets = [
     {
+        id: "0",
         category: 'Q2 2023',
         title: 'NFT Safety 101 Video',
         owner: 'Shaked',
         avatar: '',
         status: 'done',
-        priority: 5,
-        progress: 40,
+        priority: "5",
+        progress: "40",
         description: 'Make a video showcasing how to work with NFTs safely, including how to know if one is not genuine.',
         timestamp: '2023-06-03 13:11:03',
     },
     {
+        id: "1",
         category: 'Q2 2023',
         title: 'Build and Sell an AI Model',
         owner: 'Bar',
         avatar: '',
         status: 'in-progress',
-        priority: 4,
-        progress: 2,
+        priority: "4",
+        progress: "2",
         description: 'Show how easy it is to work with machine Learning and show people how to make money by building and selling an AI API',
         timestamp: '2023-06-03 13:11:03',
     },
     {
+        id: "2",
         category: 'Q3 2023',
         title: 'My top tools for 2022',
         owner: 'Luna',
         avatar: '',
         status: 'stuck',
-        priority: 10,
-        progress: 6,
+        priority: "10",
+        progress: "6",
         description: 'Share the top tools for 2023 in my website.',
         timestamp: '2023-06-03 13:11:03',
     },
     {
+        id: "3",
         category: 'Q4 2023',
         title: 'Frogger in React',
         owner: 'Shaked',
         avatar: '',
         status: 'not-started',
-        priority: 2,
-        progress: 0,
+        priority: "2",
+        progress: "0",
         description: 'Build the popular retro game Frogger in React.',
         timestamp: '2023-06-03 13:11:03',
-    },
+    }
 ]
 
-export default data;
+module.exports = tickets;
